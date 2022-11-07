@@ -1,14 +1,27 @@
 import React from 'react'
 import './App.css'
-
-import {Route,Routes} from 'react-router-dom'
-import ExcerciseDetail from './pages/ExcerciseDetail'
+import {Box} from '@mui/material'
+import { Route, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import Home from './pages/Home'
+import ExcerciseDetail  from './pages/ExcerciseDetail'
 
-const app = () => {
+
+const App = () => {
   return (
-    <div>Hi this is husnaiin</div>
+    <Box width='400px'>
+    <Navbar/>
+    <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/exercise/:id' element={<ExcerciseDetail/>} />
+    </Routes>
+    <Footer/>
+    
+    
+    
+    </Box>
   )
 }
 
-export default app
+export default App
