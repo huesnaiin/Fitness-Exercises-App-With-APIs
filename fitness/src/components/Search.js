@@ -7,13 +7,11 @@ import HorizontalScroll from './HorizontalScroll'
 
 
 
-const Search = () => {
-    const [Value,setValue]=useState('');
-    const [Exercise, setExercise] = useState([])
-    const [ExerciseType, setExerciseType] = useState([]) 
+const Search = ({Value,setValue,Exercise,setExercise,ExerciseType,setExerciseType}) => {
+    
 
     useEffect(()=>{
-        const Exercisetype=async()=>{
+        const Exercisetype=async()=>{ 
           const TypeData=await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList',KeyOption)
           setExerciseType([...TypeData]);
           console.log(ExerciseType)
@@ -44,7 +42,7 @@ const Search = () => {
     <Box>
         <TextField value={Value} onChange={(e)=>{setValue(e.target.value.toLowerCase())}}  />
         <Button  onClick={handleClick} >Click Here</Button>
-         <HorizontalScroll data={ExerciseType}/>
+        
 
     </Box>
     

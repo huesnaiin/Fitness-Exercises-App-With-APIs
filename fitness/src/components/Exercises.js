@@ -1,8 +1,24 @@
 import React from 'react'
+import ExerciseCard from './ExerciseCard'
+import { Pagination } from '@mui/material'
 
-const Exercises = () => {
+const Exercises = ({Exercise}) => {
   return (
-    <div>Exercises</div>
+    <>
+    {Exercise.map((exercise,index)=>(
+      <ExerciseCard exercise={exercise} id={index} />
+    ))}
+    {Exercises.length > 4 && (
+          <Pagination
+            color="standard"
+            shape="rounded"
+            defaultPage={1}
+            count={Math.ceil(Exercises.length / 4)}
+            
+            size="large"
+          />
+        )}
+    </>
   )
 }
 
