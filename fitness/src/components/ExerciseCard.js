@@ -5,7 +5,7 @@ import { Button,Typography } from '@mui/material'
 const ExerciseCard = ({exercise,id}) => {
   return (
     <>
-    <div>{id}</div>
+  
     <Link to={`/exercise/${exercise.id}`}>
     <img src={exercise.gifUrl} Loading='lazy' /></Link>
     <Button>{exercise.bodyPart}</Button>
